@@ -45,4 +45,8 @@ const columns = [
       address: 'London Park',
     },
   ];
-  export default Ficheimmo;
+
+  const FicheImmo =() => {
+      return <Table columns={columns} dataSource={data} scroll={{ x: 1300 }} />
+  }
+  export default FicheImmo;

@@ -15,14 +15,14 @@ import {
 } from '@ant-design/icons';
 import MenuItem from 'antd/lib/menu/MenuItem';
 import './Client.css';
-
+import FicheImmo from '../Ficheimmo';
 
 
 const { Header, Content, Footer, Sider } = Layout;
 
 const ContentCient = ({ currentPage }) => {
   switch(currentPage) {
-    case 1 : return <p>users</p>
+    case 1 : return <FicheImmo />
     case 2 : return <p>products</p>
     case 3 : return <p>imo</p>
     // case 3 return <Imo />
