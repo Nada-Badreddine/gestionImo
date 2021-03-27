@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Layout, Menu} from 'antd';
 
 
@@ -17,7 +17,6 @@ import MenuItem from 'antd/lib/menu/MenuItem';
 import './Client.css';
 import FicheImmo from '../Ficheimmo';
 
-
 const { Header, Content, Footer, Sider } = Layout;
 
 const ContentCient = ({ currentPage }) => {
@@ -31,6 +30,7 @@ const ContentCient = ({ currentPage }) => {
 
 const Client = () => {
   const [currentPage, setCurrentPage]=useState(2)
+
     return(
   <Layout>
     <Sider
