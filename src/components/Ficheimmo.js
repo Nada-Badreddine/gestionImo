@@ -5,24 +5,67 @@ import { getAllClients } from '../services/clientsServices';
 
 const columns = [
     {
-      title: 'name',
+      title: 'Designation',
       width: 100,
-      dataIndex: 'name',
-      key: 'name',
+      dataIndex: 'designation',
+      key: 'designation',
       fixed: 'left',
     },
     {
-      title: 'lastName',
+      title: 'Categorie',
       width: 100,
-      dataIndex: 'lastName',
-      key: 'lastName',
+      dataIndex: 'categorie',
+      key: 'categorie',
       fixed: 'left',
     },
     {
-      title: 'Ville',
+      title: 'Compte Comptable',
       width: 100,
-      dataIndex: 'ville',
-      key: 'ville',
+      dataIndex: 'compte Comptable',
+      key: 'compte Comptable',
+      fixed: 'left',
+    },
+    {
+      title: 'Duree',
+      width: 100,
+      dataIndex: 'duree',
+      key: 'duree',
+      fixed: 'left',
+    },
+    {
+      title: 'montant',
+      width: 100,
+      dataIndex: 'montant',
+      key: 'montant',
+      fixed: 'left',
+    },
+    {
+      title: 'Date mis en service',
+      width: 100,
+      dataIndex: 'date mis en service',
+      key: 'date mis en service',
+      fixed: 'left',
+    },
+    {
+      title: 'Date d acquisition',
+      width: 100,
+      dataIndex: 'Date d acquisition',
+      key: 'Date d acquisition',
+      fixed: 'left',
+    },
+    {
+      title: 'Type d amortissement',
+      width: 100,
+      dataIndex: 'Type d amortissement',
+      key: 'Type d amortissement',
+      fixed: 'left',
+    },
+    
+    {
+      title: 'Date d acquisition',
+      width: 100,
+      dataIndex: 'categorie',
+      key: 'categorie',
       fixed: 'left',
     },
     {
@@ -31,21 +74,6 @@ const columns = [
       fixed: 'right',
       width: 100,
       render: () => <a>3amar bzwer</a>,
-    },
-  ];
-  
-  const data = [
-    {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York Park',
-    },
-    {
-      key: '2',
-      name: 'Jim Green',
-      age: 40,
-      address: 'London Park',
     },
   ];
 

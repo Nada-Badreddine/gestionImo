@@ -16,15 +16,19 @@ import {
 import MenuItem from 'antd/lib/menu/MenuItem';
 import './Client.css';
 import FicheImmo from '../Ficheimmo';
+import Saisi from '../saisi';
+import Amortissement from '../amortissement';
+
+
 
 const { Header, Content, Footer, Sider } = Layout;
 
 const ContentCient = ({ currentPage }) => {
   switch(currentPage) {
-    case 1 : return <FicheImmo />
-    case 2 : return <p>products</p>
-    case 3 : return <p>imo</p>
-    // case 3 return <Imo />
+    case 1 : return <Saisi />
+    case 2 : return <FicheImmo />
+    case 3 : return <Amortissement />
+ 
   }
 }
 
@@ -46,13 +50,13 @@ const Client = () => {
       
         
         <Menu.Item key="1" icon={<UploadOutlined />} onClick={() => setCurrentPage(1)}>
-          users 1
+         Saisi d'une immobilisation
         </Menu.Item>
         <Menu.Item key="2" icon={<BarChartOutlined />} onClick={() => setCurrentPage(2)}>
-          products 2
+          Liste des immobilisations
         </Menu.Item>
         <Menu.Item key="3" icon={<CloudOutlined />} onClick={() => setCurrentPage(3)}>
-          imo 3
+          Plan d'amortissement
         </Menu.Item>
       </Menu>
     </Sider>

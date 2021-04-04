@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { createClient } from '../../services/clientsServices';
 
 const useForm = (callback, validate) => {
   const [values, setValues] = useState({
@@ -18,11 +19,14 @@ const useForm = (callback, validate) => {
     });
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
 
     setErrors(validate(values));
+    console.log("values", values)
     setIsSubmitting(true);
+    const { password, email, username } = values
+     await createClient( { password, email, username })
   };
 
   useEffect(

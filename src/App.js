@@ -10,6 +10,10 @@ import Marketing from './components/pages/Marketing';
 import Products from './components/pages/Products';
 import FormSignup from './components/pages/FormSignup';
 import Client from './components/Client/Client';
+import Saisi from './components/saisi';
+import Signin from './components/signin';
+import Lineaire from './components/lineaire';
+
 
 import 'antd/dist/antd.css';
 
@@ -26,6 +30,10 @@ function App() {
       <Route path='/marketing' exact component={Marketing} />
       <Route path='/consulting' exact component={Consulting} />
       <Route path='/client' exact component={Client} />
+    
+      <Route path='/signin' exact component={Signin} />
+      <Route path='/saisi' exact component={Saisi} />
+      <Route path='/lineaire' exact component={Lineaire} />
     
     </Switch>
    </Router>

@@ -2,12 +2,15 @@ import React from 'react';
 import validate from './validateInfo';
 import useForm from './useForm';
 import './Form.css';
+import { createClient } from '../../services/clientsServices';
 
 const FormSignup = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(
     submitForm,
     validate
   );
+
+  console.log("vaa", values)
 
   return (
     <div className='form-content-right'>
@@ -68,7 +71,7 @@ const FormSignup = ({ submitForm }) => {
           Sign up
         </button>
         <span className='form-input-login'>
-          Already have an account? Login <a href='#'>here</a>
+          Already have an account? Login <a href='/signin'>here</a>
         </span>
       </form>
     </div>
