@@ -24,6 +24,9 @@ const Saisi = () => {
   const onFinish = async (values) => {
     console.log(values);
     await createImo(values.user);
+
+   // const { password, email, username } = values.user
+   // await createClient( { password, email, username })
   };
 
   return (
@@ -36,16 +39,15 @@ const Saisi = () => {
       <Form.Item
         name={["user", "designation"]}
         label="Designation:"
-        rules={[{ type: "number", min: 0, max: 99 }]}
+        rules={[{ type: "string", min: 0, max: 255 }]}
       >
-        <InputNumber />
+        <Input />
       </Form.Item>
       <Form.Item
         name={["user", "categorie"]}
         label="Categorie:"
-        rules={[{ type: "string", min: 0, max: 99 }]}
+        rules={[{ type: "string", min: 0, max: 255 }]}
       >
-        <Input />
       </Form.Item>
       <Form.Item
         name={["user", "compte_comptable"]}

@@ -64,6 +64,7 @@ import './Contact.scss';
                     </div>
                 </div>
                 <form> 
+                <p>Fill up the form and then click send</p>
                     <div className="col">
                         <div className="form-group">
                             <label>

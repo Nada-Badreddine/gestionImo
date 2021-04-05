@@ -13,8 +13,9 @@ import Client from './components/Client/Client';
 import Saisi from './components/saisi';
 import Signin from './components/signin';
 import Lineaire from './components/lineaire';
+import Formm from './components/formm';
 
-
+// git bush cd desktop cd project .....   code .
 import 'antd/dist/antd.css';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
       <Route path='/signin' exact component={Signin} />
       <Route path='/saisi' exact component={Saisi} />
       <Route path='/lineaire' exact component={Lineaire} />
+      <Route path='/formm' exact component={Formm} />
     
     </Switch>
    </Router>

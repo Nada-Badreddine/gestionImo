@@ -60,7 +60,7 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <Link
-              to="/contact-us"
+              to="/formm"
               className="nav-links"
               onClick={closeMobileMenu}
             >
@@ -79,13 +79,13 @@ function Navbar() {
         </ul>
         {name ? (
           <div style={{ display: "flex" }}>
-            <p style={{ fontSize: "1rem" }}>{name}</p>
+            <p style={{ fontSize: "1rem", color: 'red' }} className="header-name">{name}</p>
             <Button
               type="primary"
               danger
               onClick={() => {
                 localStorage.clear();
-                window.location.reload();
+                window.location.replace("/");
               }}
             >
               Deconnexion

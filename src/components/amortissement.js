@@ -17,10 +17,10 @@ const columns = [
       key: 'operation',
       fixed: 'right',
       width: 100,
-      render: () =>  <Link to='lineaire'>
-      <button className='btn-started'>Amortissement lineaire</button>
+      render: () =>  
+      <a href='/lineaire'>plan d'amortissement</a>
  
- </ Link>,
+ 
   
  
 }];
