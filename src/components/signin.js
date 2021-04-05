@@ -1,8 +1,8 @@
-import { Form, Input, Button, Checkbox } from 'antd';
-import React from 'react';
-import './Signin.css';
-import { Link } from 'react-router-dom';
-
+import { useState } from "react";
+import { Form, Input, Button, Checkbox } from "antd";
+import React from "react";
+import "./Signin.css";
+import { login } from "../services/clientsServices";
 
 const layout = {
   labelCol: { span: 8 },
@@ -13,40 +13,47 @@ const tailLayout = {
 };
 
 const Signin = () => {
-  const onFinish = (values) => {
-    console.log('Success:', values);
+  const [error, setError] = useState("");
+  const onFinish = async (values) => {
+    const { email, password } = values;
+    setError("");
+    const result = await login({ email, password });
+    if (result.data.error) {
+      setError(result.data.error);
+    } else {
+      localStorage.setItem("token", result.data.token);
+      window.location.replace("/client");
+      localStorage.setItem("name", result.data.client.username);
+    }
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
+    console.log("Failed:", errorInfo);
   };
- 
 
   return (
-   
     <Form
-    
       {...layout}
       name="basic"
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
-      className='x'
+      className="x"
     >
       <h1>Sign in</h1>
       <p>use your UserName or your Gmail account</p>
-      <Form.Item  
-        label="Username"
-        name="username"
-        rules={[{ required: true, message: 'Please input your username!' }]}
+      <Form.Item
+        label="email"
+        name="email"
+        rules={[{ required: true, message: "Please input your email!" }]}
       >
         <Input />
       </Form.Item>
 
       <Form.Item
-        label="Password"
+        label="password"
         name="password"
-        rules={[{ required: true, message: 'Please input your password!' }]}
+        rules={[{ required: true, message: "Please input your password!" }]}
       >
         <Input.Password />
       </Form.Item>
@@ -56,21 +63,18 @@ const Signin = () => {
       </Form.Item>
 
       <Form.Item {...tailLayout}>
-      <Link to='client'>
         <Button type="primary" htmlType="submit">
           Submit
         </Button>
-        </Link>
-        <span>  No account? <a href='/sign-up'>create one ! </a> </span>
+        {error && <p>{error}</p>}
       </Form.Item>
-      <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-       
-      </Form.Item>
-      
+      <Form.Item
+        {...tailLayout}
+        name="remember"
+        valuePropName="checked"
+      ></Form.Item>
     </Form>
-  )
+  );
 };
-
-
 
 export default Signin;
