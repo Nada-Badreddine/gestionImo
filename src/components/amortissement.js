@@ -5,6 +5,7 @@ import { Table } from "antd";
 import "../App.css";
 import { Link } from "react-router-dom";
 import { getAllImo } from "../services/imoServices";
+import getAmortis from "../helpers/imoHelpers";
 
 const Amortissement = () => {
   const [imo, setImo] = useState([]);
@@ -22,7 +23,6 @@ const Amortissement = () => {
       fixed: "right",
       width: 100,
       render: (item) => {
-        console.log("item", item);
         return (
           <Button
             type="primary"
@@ -61,23 +61,23 @@ const Amortissement = () => {
     },
     {
       title: "Valeur de base",
-      dataIndex: "valeur de base",
-      key: "valeur de base",
+      dataIndex: "montant",
+      key: "montant",
     },
     {
       title: "Annuité d'amortisssement",
-      dataIndex: "annuité d'amortisssement",
-      key: "annuité d'amortisssement",
+      dataIndex: "annAmm",
+      key: "annAmm",
     },
     {
       title: "Amortissement cumulé",
-      dataIndex: "amortissement cumulé",
-      key: "amortissement cumulé",
+      dataIndex: "ammorCumm",
+      key: "ammorCumm",
     },
     {
       title: "Valeur nette comptable",
-      dataIndex: "valeur nette comptable",
-      key: "valeur nette comptable",
+      dataIndex: "vnc",
+      key: "vnc",
     },
   ];
 
@@ -88,7 +88,8 @@ const Amortissement = () => {
       });
   }, []);
 
-  console.log("imo", imo);
+  const ammor = getAmortis(currentItem);
+
   return (
     <>
       <Table dataSource={imo} columns={columns} setVisible={setVisible} />
@@ -101,8 +102,7 @@ const Amortissement = () => {
         onCancel={() => setVisible(false)}
         width={1000}
       >
-        <p>{currentItem?.duree}</p>
-        <Table dataSource={dataSource} columns={columnsAmmo} />;
+        <Table dataSource={ammor} columns={columnsAmmo} />;
       </Modal>
     </>
   );

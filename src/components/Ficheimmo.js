@@ -21,7 +21,7 @@ const columns = [
   {
     title: "Compte Comptable",
     width: 100,
-    dataIndex: "compte Comptable",
+    dataIndex: "compte_comptable",
     key: "compte Comptable",
     fixed: "left",
   },
@@ -42,14 +42,14 @@ const columns = [
   {
     title: "Date mis en service",
     width: 100,
-    dataIndex: "date mis en service",
+    dataIndex: "serviceDate",
     key: "date mis en service",
     fixed: "left",
   },
   {
     title: "Date d acquisition",
     width: 100,
-    dataIndex: "Date d acquisition",
+    dataIndex: "dateAquisition",
     key: "Date d acquisition",
     fixed: "left",
   },
@@ -97,6 +97,8 @@ const FicheImmo = () => {
         setImo(data.data.result);
       });
   }, []);
+
+  console.log("imo", imo);
 
   return (
     <Table

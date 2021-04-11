@@ -23,10 +23,26 @@ const validateMessages = {
 const Saisi = () => {
   const onFinish = async (values) => {
     console.log(values);
-    await createImo(values.user);
 
-   // const { password, email, username } = values.user
-   // await createClient( { password, email, username })
+    const {
+      designation,
+      compte_comptable,
+      duree,
+      montant,
+      name,
+      dateAquisition,
+      serviceDate,
+    } = values.user;
+
+    await createImo({
+      designation,
+      compte_comptable,
+      duree,
+      montant,
+      name,
+      dateAquisition: dateAquisition._d,
+      serviceDate: serviceDate._d,
+    });
   };
 
   return (
@@ -47,8 +63,7 @@ const Saisi = () => {
         name={["user", "categorie"]}
         label="Categorie:"
         rules={[{ type: "string", min: 0, max: 255 }]}
-      >
-      </Form.Item>
+      ></Form.Item>
       <Form.Item
         name={["user", "compte_comptable"]}
         label="Compte Comptable:"
@@ -66,14 +81,14 @@ const Saisi = () => {
       <Form.Item
         name={["user", "montant"]}
         label="Montant"
-        rules={[{ type: "number", min: 0, max: 99 }]}
+        rules={[{ type: "number", min: 0, max: 10000 }]}
       >
         <InputNumber />
       </Form.Item>
-      <Form.Item label="Date d'acquisition:">
+      <Form.Item label="Date d'acquisition:" name={["user", "dateAquisition"]}>
         <DatePicker />
       </Form.Item>
-      <Form.Item label="Date mis en service">
+      <Form.Item label="Date mis en service" name={["user", "serviceDate"]}>
         <DatePicker />
       </Form.Item>
 
