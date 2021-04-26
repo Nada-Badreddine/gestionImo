@@ -44,8 +44,8 @@ const columns = [
   {
     title: "Categorie",
     width: 100,
-    dataIndex: "categorie",
-    key: "categorie",
+    dataIndex: "category",
+    key: "category",
     fixed: "left",
   
   
@@ -95,12 +95,11 @@ const columns = [
     key: "Type d amortissement",
     fixed: "left",
   },
-
   {
-    title: "Date d acquisition",
+    title: "Type",
     width: 100,
-    dataIndex: "categorie",
-    key: "categorie",
+    dataIndex: "type",
+    key: "Type d amortissement",
     fixed: "left",
   },
   {
