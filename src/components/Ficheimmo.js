@@ -1,33 +1,45 @@
 import { useEffect, useState } from "react";
 import { Table } from "antd";
-import { DeleteOutlined } from '@ant-design/icons';
-import { EditOutlined } from '@ant-design/icons';
-import { Menu, Dropdown, Button } from 'antd';
+import { DeleteOutlined } from "@ant-design/icons";
+import { EditOutlined } from "@ant-design/icons";
+import { Menu, Dropdown, Button } from "antd";
 
 import { getAllImo, removeImo, editImo } from "../services/imoServices";
-import { Input, Space } from 'antd';
-import { AudioOutlined } from '@ant-design/icons';
+import { Input, Space } from "antd";
+import { AudioOutlined } from "@ant-design/icons";
 
 const { Search } = Input;
-const onSearch = value => console.log(value);
+const onSearch = (value) => console.log(value);
 
 <Space direction="vertical">
-<Search placeholder="input search text" onSearch={onSearch} enterButton />
-</Space> 
+  <Search placeholder="input search text" onSearch={onSearch} enterButton />
+</Space>;
 const menu = (
   <Menu>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.antgroup.com"
+      >
         1st menu item
       </a>
     </Menu.Item>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.aliyun.com"
+      >
         2nd menu item
       </a>
     </Menu.Item>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.luohanacademy.com"
+      >
         3rd menu item
       </a>
     </Menu.Item>
@@ -47,12 +59,8 @@ const columns = [
     dataIndex: "category",
     key: "category",
     fixed: "left",
-  
-  
-  
   },
-  
-  
+
   {
     title: "Duree d'amortissement",
     width: 100,
@@ -108,32 +116,27 @@ const columns = [
     fixed: "right",
     width: 100,
     render: (im) => {
-      return ( 
+      return (
         <div>
-<DeleteOutlined>
-          onClick={async () => {
-            await removeImo(im._id);
-            window.location.reload("/client");
-          }}
-          supprimer  
-        </DeleteOutlined>
+          <DeleteOutlined
+            onClick={async () => {
+              await removeImo(im._id);
+              window.location.reload("/client");
+            }}
+          >
+            supprimer
+          </DeleteOutlined>
 
-
-        <EditOutlined >
-          onClick={async () => {
-            await editImo(im._id);
-            window.location.reload("/client");
-          }}
-       
-          modifier
-          
-        </EditOutlined>
+          <EditOutlined
+            onClick={async () => {
+              await editImo(im._id);
+              window.location.reload("/client");
+            }}
+          >
+            modifier
+          </EditOutlined>
         </div>
-        
-
-
       );
-      
     },
   },
 ];
@@ -151,20 +154,12 @@ const FicheImmo = () => {
   console.log("imo", imo);
 
   return (
-    
-
-    
     <Table
       columns={columns}
       dataSource={imo}
       setImo={setImo}
       scroll={{ x: 1300 }}
-      
     />
-
-    
-
-  
   );
 };
 export default FicheImmo;
