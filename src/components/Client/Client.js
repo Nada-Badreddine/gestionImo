@@ -18,6 +18,7 @@ import './Client.css';
 import FicheImmo from '../Ficheimmo';
 import Saisi from '../saisi';
 import Amortissement from '../amortissement';
+import Amortissementdeg from '../amortissementdeg';
 
 
 
@@ -28,6 +29,7 @@ const ContentCient = ({ currentPage }) => {
     case 1 : return <Saisi />
     case 2 : return <FicheImmo />
     case 3 : return <Amortissement />
+    case 4 : return <Amortissementdeg />
  
   }
 }
@@ -56,7 +58,10 @@ const Client = () => {
           Liste des immobilisations
         </Menu.Item>
         <Menu.Item key="3" icon={<CloudOutlined />} onClick={() => setCurrentPage(3)}>
-          Plan d'amortissement
+          Plan d'amortissement lineaire
+        </Menu.Item>
+        <Menu.Item key="4" icon={<CloudOutlined />} onClick={() => setCurrentPage(3)}>
+          Plan d'amortissement degressif
         </Menu.Item>
       </Menu>
     </Sider>

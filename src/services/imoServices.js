@@ -16,6 +16,9 @@ const createImo = data => {
 const removeImo = id => {
   return api.delete(`/imo/${id}`);
 };
+const editImo = id => {
+  return api.delete(`/imo/${id}`);
+};
 
 
 export {
@@ -23,4 +26,5 @@ export {
   getImoById,
   createImo,
   removeImo,
+  editImo,
 };
