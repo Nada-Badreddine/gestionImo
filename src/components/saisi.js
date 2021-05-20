@@ -16,10 +16,6 @@ const layout = {
   wrapperCol: { span: 16 },
 };
 
-
-
-
-
 const validateMessages = {
   required: "${label} is required!",
   types: {
@@ -31,10 +27,7 @@ const validateMessages = {
   },
 };
 
-
 const Saisi = () => {
-
-
   const [subCategoryValue, setSubCategoryValue] = React.useState("");
 
   /* categoryValue fiha corporelle incorpor et financière */
@@ -42,26 +35,17 @@ const Saisi = () => {
   const [categoryValue, setCategorieValue] = React.useState("");
 
   const [visible, setVisible] = React.useState(false);
- 
 
-  
-  
   const onChange = (e) => {
     setCategorieValue(e.target.value);
     setVisible(true);
-    // 7elina popin 
-
-    
-    
+    // 7elina popin
   };
-
-  
 
   const onChangeSubCategory = (e) => {
     setSubCategoryValue(e.target.value);
   };
 
-  
   const onFinish = async (values) => {
     console.log(values);
 
@@ -69,10 +53,10 @@ const Saisi = () => {
       (cat) => cat.name === subCategoryValue
     )[0];
     // [{
-      //name: "Frais de recherche et de développement",
-      //comptes: 203,
-      //category: "incorporelle",
-      //type: "Frais de recherche et de développement",
+    //name: "Frais de recherche et de développement",
+    //comptes: 203,
+    //category: "incorporelle",
+    //type: "Frais de recherche et de développement",
     // },]
 
     const {
@@ -85,13 +69,12 @@ const Saisi = () => {
       name,
       comptes,
       category,
-     
+
       dateAquisition,
       serviceDate,
-      
-      
     } = values.user;
     console.log("selectedSubCategory", selectedSubCategory);
+    console.log("values.user", values.user);
 
     await createImo({
       Designation,
@@ -102,7 +85,7 @@ const Saisi = () => {
 
       /*** */
       name,
-      comptes,
+      comptes: selectedSubCategory.comptes,
       category: selectedSubCategory.category,
       type: selectedSubCategory.type,
       /*** */
@@ -111,7 +94,6 @@ const Saisi = () => {
     });
   };
 
-  
   const subCategories = [
     {
       name: "les terrains",
@@ -149,7 +131,7 @@ const Saisi = () => {
       category: "corporelle",
       type: "Autres immobilisations corporelles",
     },
-    
+
     {
       name: "Frais d'établissement",
       comptes: 201,
@@ -211,9 +193,10 @@ const Saisi = () => {
       type: "Titres immobilisés (droits de créance)",
     },
   ];
-    const filtredSubCategories = subCategories.filter(
-      (kdskdjskdjskjdksjdskdjskjdskdjskdj) => kdskdjskdjskjdksjdskdjskjdskdjskdj.category === categoryValue
-    );
+  const filtredSubCategories = subCategories.filter(
+    (kdskdjskdjskjdksjdskdjskjdskdjskdj) =>
+      kdskdjskdjskjdksjdskdjskjdskdjskdj.category === categoryValue
+  );
   // jibli subcategories eli categry mte3hom === selectedCategory
 
   return (
@@ -224,9 +207,6 @@ const Saisi = () => {
         onFinish={onFinish}
         validateMessages={validateMessages}
       >
-
-
-
         <Form.Item
           name={["user", "Designation"]}
           label="Designation:"
@@ -235,29 +215,21 @@ const Saisi = () => {
           <Input />
         </Form.Item>
 
-
-
-        <Form.Item 
-        
-       name={["user", "Categorie"]} label="Categorie">
+        <Form.Item name={["user", "Categorie"]} label="Categorie">
           <Radio.Group onChange={onChange} value={categoryValue}>
             <Radio value="corporelle">Corporelle</Radio>
             <Radio value="incorporelle">Incorporelle</Radio>
             <Radio value="financiére">Financiére</Radio>
           </Radio.Group>
         </Form.Item>
-       
+
         <Form.Item
           name={["user", "Montant"]}
           label="Montant"
           rules={[{ type: "number", min: 0, max: 10000 }]}
-          >
+        >
           <InputNumber />
-          
-          
-          
-          
-
+        </Form.Item>
         <Form.Item
           name={["user", "duree"]}
           label="Duree d'amortissement :"
@@ -265,11 +237,10 @@ const Saisi = () => {
         >
           <InputNumber />
         </Form.Item>
-        
 
         <Form.Item
-          label= "Date d'acquisition :"
-          name={["user",  "dateAquisition"]}
+          label="Date d'acquisition :"
+          name={["user", "dateAquisition"]}
         >
           <DatePicker />
         </Form.Item>
@@ -284,7 +255,6 @@ const Saisi = () => {
             <Radio value="b">Dégressif</Radio>
           </Radio.Group>
         </Form.Item>
-
 
         <Form.Item
           name={["user", "Coefficient"]}
@@ -302,24 +272,11 @@ const Saisi = () => {
           <InputNumber />
         </Form.Item>
 
-
-
-        
-        </Form.Item>
-
-       
         <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
-          <Button type="primary" htmlType="submit"  >
+          <Button type="primary" htmlType="submit">
             Submit
           </Button>
-          
         </Form.Item>
-
-
-
-
-        
-        
 
         <Modal
           title=""
@@ -336,11 +293,6 @@ const Saisi = () => {
             })}
           </Radio.Group>
         </Modal>
-
-
-        
-
-
       </Form>
     </>
   );

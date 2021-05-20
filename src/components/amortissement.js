@@ -14,14 +14,14 @@ const Amortissement = () => {
   const columns = [
     {
       title: "designation",
-      dataIndex: "designation",
+      dataIndex: "Designation",
       key: "designation",
     },
     {
       title: "Amortissement",
       key: "operation",
       fixed: "right",
-      
+
       render: (item) => {
         return (
           <Button
@@ -35,21 +35,6 @@ const Amortissement = () => {
           </Button>
         );
       },
-    },
-  ];
-
-  const dataSource = [
-    {
-      key: "1",
-      name: "Mike",
-      age: 32,
-      address: "10 Downing Street",
-    },
-    {
-      key: "2",
-      name: "John",
-      age: 42,
-      address: "10 Downing Street",
     },
   ];
 

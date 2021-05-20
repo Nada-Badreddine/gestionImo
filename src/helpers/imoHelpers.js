@@ -13,19 +13,19 @@ const getAmortis = (currentImo) => {
     // kenni fi 3am loul khater fi boucle for bdit men 1 heka 3leh 3malt pas ===1
     if (pas === 1) {
       annAmm =
-        ((currentImo.montant * (30 * (12 - mothFirstYers))) / 360) * taux;
+        ((currentImo.Montant * (30 * (12 - mothFirstYers))) / 360) * taux;
       // if eni fi 3am le5er  currentImo?.duree + 1
     } else if (pas === currentImo?.duree + 1) {
-      annAmm = ((currentImo.montant * (30 * mothLastYers)) / 360) * taux;
+      annAmm = ((currentImo.Montant * (30 * mothLastYers)) / 360) * taux;
     } else {
-      annAmm = currentImo.montant * taux;
+      annAmm = currentImo.Montant * taux;
     }
     ammorCumm = annAmm + ammorCumm;
-    const vnc = currentImo?.montant - ammorCumm;
+    const vnc = currentImo?.Montant - ammorCumm;
     // a chaque for je push un élement dans array
     ammorArray.push({
       années: pas === 1 ? "N" : `N+${pas - 1}`,
-      montant: currentImo?.montant,
+      montant: currentImo?.Montant,
       annAmm,
       ammorCumm,
       vnc,
