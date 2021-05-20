@@ -21,7 +21,7 @@ const Amortissement = () => {
       title: "Amortissement",
       key: "operation",
       fixed: "right",
-      width: 100,
+      
       render: (item) => {
         return (
           <Button
