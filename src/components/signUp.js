@@ -1,7 +1,6 @@
-import { Form, Input, InputNumber, Button } from 'antd';
+import { Form, Input, InputNumber, Button } from "antd";
 import React from "react";
 import { createClient } from "../services/clientsServices";
-
 
 const layout = {
   labelCol: { span: 8 },
@@ -10,13 +9,13 @@ const layout = {
 
 /* eslint-disable no-template-curly-in-string */
 const validateMessages = {
-  required: '${label} is required!',
+  required: "${label} is required!",
   types: {
-    email: '${label} is not a valid email!',
-    number: '${label} is not a valid number!',
+    email: "${label} is not a valid email!",
+    number: "${label} is not a valid number!",
   },
   number: {
-    range: '${label} must be between ${min} and ${max}',
+    range: "${label} must be between ${min} and ${max}",
   },
 };
 /* eslint-enable no-template-curly-in-string */
@@ -25,34 +24,52 @@ const SignUp = () => {
   const onFinish = async (values) => {
     console.log(values);
 
-    const { password, email, username, website, phone } = values.user
-    await createClient( { password, email, username, website, phone})
+    const { email, username, website, phone } = values.user;
+    await createClient({
+      password: values.password,
+      email,
+      username,
+      website,
+      phone,
+    });
   };
 
   return (
-    <Form 
-    {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
-        <h1>
-          Get started with us today! Create your account by filling out the
-          information below.
-        </h1>
-      <Form.Item name={['user', 'name']} label="Username" rules={[{ required: true }]}>
-        <Input />
-      </Form.Item>
-      <Form.Item name={['user', 'email']} label="Email" rules={[{ type: 'email' }]}>
-        <Input />
-      </Form.Item>
-     
-      <Form.Item name={['user', 'website']} label="Website">
+    <Form
+      {...layout}
+      name="nest-messages"
+      onFinish={onFinish}
+      validateMessages={validateMessages}
+    >
+      <h1>
+        Get started with us today! Create your account by filling out the
+        information below.
+      </h1>
+      <Form.Item
+        name={["user", "username"]}
+        label="Username"
+        rules={[{ required: true }]}
+      >
         <Input />
       </Form.Item>
       <Form.Item
-        name="password"
+        name={["user", "email"]}
+        label="Email"
+        rules={[{ type: "email" }]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item name={["user", "website"]} label="Website">
+        <Input />
+      </Form.Item>
+      <Form.Item
+        name={"password"}
         label="Password"
         rules={[
           {
             required: true,
-            message: 'Please input your password!',
+            message: "Please input your password!",
           },
         ]}
         hasFeedback
@@ -60,21 +77,23 @@ const SignUp = () => {
         <Input.Password />
       </Form.Item>
       <Form.Item
-        name="confirm"
+        name={"confirm"}
         label="Confirm Password"
-        dependencies={['password']}
+        dependencies={["password"]}
         hasFeedback
         rules={[
           {
             required: true,
-            message: 'Please confirm your password!',
+            message: "Please confirm your password!",
           },
           ({ getFieldValue }) => ({
             validator(_, value) {
-              if (!value || getFieldValue('password') === value) {
+              if (!value || getFieldValue("password") === value) {
                 return Promise.resolve();
               }
-              return Promise.reject(new Error('The two passwords that you entered do not match!'));
+              return Promise.reject(
+                new Error("The two passwords that you entered do not match!")
+              );
             },
           }),
         ]}
@@ -83,21 +102,18 @@ const SignUp = () => {
       </Form.Item>
 
       <Form.Item
-        name="phone"
+        name={["user", "phone"]}
         label="Phone Number"
-        rules={[{ required: true, message: 'Please input your phone number!' }]}
+        rules={[{ required: true, message: "Please input your phone number!" }]}
       >
-        <Input  style={{ width: '100%' }} />
+        <Input style={{ width: "100%" }} />
       </Form.Item>
       <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
         <Button type="primary" htmlType="submit">
           Sign up
         </Button>
-             Already have an account? Login <a href='/signin'>here</a>
+        Already have an account? Login <a href="/signin">here</a>
       </Form.Item>
-     
-         
-        
     </Form>
   );
 };

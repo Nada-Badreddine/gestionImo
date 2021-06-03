@@ -65,7 +65,6 @@ const Saisi = () => {
       Coefficient,
       Quantite,
       Montant,
-      type,
       name,
       comptes,
       category,
@@ -74,7 +73,7 @@ const Saisi = () => {
       serviceDate,
     } = values.user;
     console.log("selectedSubCategory", selectedSubCategory);
-    console.log("values.user", values.user);
+    console.log("values.user", values);
 
     await createImo({
       Designation,
@@ -91,6 +90,7 @@ const Saisi = () => {
       /*** */
       dateAquisition: dateAquisition._d,
       serviceDate: serviceDate._d,
+      typeAmor: values["radio-group"],
     });
   };
 
@@ -250,9 +250,9 @@ const Saisi = () => {
         </Form.Item>
 
         <Form.Item name="radio-group" label="Type d'amortissement">
-          <Radio.Group>
-            <Radio value="a">Lineaire</Radio>
-            <Radio value="b">Dégressif</Radio>
+          <Radio.Group name={["user", "typeAmor"]}>
+            <Radio value="Lineaire">Lineaire</Radio>
+            <Radio value="Dégressif">Dégressif</Radio>
           </Radio.Group>
         </Form.Item>
 

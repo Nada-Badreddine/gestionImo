@@ -22,8 +22,8 @@ const Signin = () => {
       setError(result.data.error);
     } else {
       localStorage.setItem("token", result.data.token);
-      window.location.replace("/client");
       localStorage.setItem("name", result.data.client.username);
+      window.location.replace("/client");
     }
   };
 
