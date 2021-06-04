@@ -69,7 +69,10 @@ const Amortissement = () => {
   useEffect(() => {
     getAllImo() // fetch as usual here!
       .then((data) => {
-        setImo(data.data.result);
+        const im = data.data.result.filter(
+          (item) => item.typeAmor === "Lineaire"
+        );
+        setImo(im);
       });
   }, []);
 

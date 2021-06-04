@@ -52,7 +52,7 @@ const columns = [
   },
   {
     title: "Type d'amortissement",
-    dataIndex: "Type d'amortissement",
+    dataIndex: "typeAmor",
     key: "Type d'amortissement",
   },
   {

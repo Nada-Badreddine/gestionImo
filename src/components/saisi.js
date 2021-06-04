@@ -226,7 +226,7 @@ const Saisi = () => {
         <Form.Item
           name={["user", "Montant"]}
           label="Montant"
-          rules={[{ type: "number", min: 0, max: 10000 }]}
+          rules={[{ type: "number", min: 0, max: 100000 }]}
         >
           <InputNumber />
         </Form.Item>

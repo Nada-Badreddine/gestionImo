@@ -1,98 +1,98 @@
-import React from 'react'
 import { useState, useEffect } from "react";
 import { Modal, Button } from "antd";
 
-const Amortissementdeg = () => { 
-    const [imo, setImo] = useState([]);
-    const [visible, setVisible] = useState(false);
-    const [currentItem, setCurrentItem] = useState(null);
-    const columns = [
-        {
-          title: "designation",
-          dataIndex: "designation",
-          key: "designation",
-        },
-        {
-            title: "Amortissement",
-            key: "operation",
-            fixed: "right",
-            
-            render: (item) => {
-              return (
-                <Button
-                  type="primary"
-                  onClick={() => {
-                    setVisible(true);
-                    setCurrentItem(item);
-                  }}
-                >
-                  plan d'amortissement
-                </Button>
-              );
-            },
-          },
-    ]
+import { Table } from "antd";
+import "../App.css";
+import { Link } from "react-router-dom";
+import { getAllImo } from "../services/imoServices";
+import { getAmortisDeg } from "../helpers/imoHelpers";
 
-    const dataSource = [
-        {
-          key: "1",
-          name: "Mike",
-          age: 32,
-          address: "10 Downing Street",
-        },
-        {
-          key: "2",
-          name: "John",
-          age: 42,
-          address: "10 Downing Street",
-        },
-      ];
+const AmortissementDeg = () => {
+  const [imo, setImo] = useState([]);
+  const [visible, setVisible] = useState(false);
+  const [currentItem, setCurrentItem] = useState(null);
+  const columns = [
+    {
+      title: "designation",
+      dataIndex: "Designation",
+      key: "designation",
+    },
+    {
+      title: "Amortissement",
+      key: "operation",
+      fixed: "right",
 
-      const columnsAmmo = [
-        {
-          title: "Années",
-          dataIndex: "années",
-          key: "années",
-        },
-        {
-          title: "Base amortissement",
-          dataIndex: "montant",
-          key: "montant",
-        },
-        {
-          title: "Annuité d'amortisssement",
-          dataIndex: "annAmm",
-          key: "annAmm",
-        },
-        {
-          title: "Amortissement cumulé",
-          dataIndex: "ammorCumm",
-          key: "ammorCumm",
-        },
-        {
-          title: "Valeur nette comptable",
-          dataIndex: "vnc",
-          key: "vnc",
-        },
-      ];
+      render: (item) => {
+        return (
+          <Button
+            type="primary"
+            onClick={() => {
+              setVisible(true);
+              setCurrentItem(item);
+            }}
+          >
+            plan d'amortissement
+          </Button>
+        );
+      },
+    },
+  ];
 
+  const columnsAmmo = [
+    {
+      title: "Années",
+      dataIndex: "années",
+      key: "années",
+    },
+    {
+      title: "Valeur de base",
+      dataIndex: "montant",
+      key: "montant",
+    },
+    {
+      title: "Annuité d'amortisssement",
+      dataIndex: "annAmm",
+      key: "annAmm",
+    },
+    {
+      title: "Amortissement cumulé",
+      dataIndex: "ammorCumm",
+      key: "ammorCumm",
+    },
+    {
+      title: "Valeur nette comptable",
+      dataIndex: "vnc",
+      key: "vnc",
+    },
+  ];
 
+  useEffect(() => {
+    getAllImo() // fetch as usual here!
+      .then((data) => {
+        const im = data.data.result.filter(
+          (item) => item.typeAmor === "Dégressif"
+        );
+        setImo(im);
+      });
+  }, []);
 
+  const ammor = getAmortisDeg(currentItem);
 
+  return (
+    <>
+      <Table dataSource={imo} columns={columns} setVisible={setVisible} />
 
-
-
-
-
-
-
-
-
-    return (
-        <div>
-            <h1>Hello </h1>
-        </div>
-    )
-}
-
-export default Amortissementdeg
+      <Modal
+        title="Modal 1000px width"
+        centered
+        visible={visible}
+        onOk={() => setVisible(false)}
+        onCancel={() => setVisible(false)}
+        width={1000}
+      >
+        <Table dataSource={ammor} columns={columnsAmmo} />;
+      </Modal>
+    </>
+  );
+};
+export default AmortissementDeg;
