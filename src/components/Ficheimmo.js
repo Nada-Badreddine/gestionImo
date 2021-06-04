@@ -56,11 +56,6 @@ const columns = [
     key: "Type d'amortissement",
   },
   {
-    title: "Coefficient",
-    dataIndex: "Coefficient",
-    key: "Coefficient",
-  },
-  {
     title: "Action",
     dataIndex: "Action",
     key: "Action",

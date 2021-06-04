@@ -62,7 +62,6 @@ const Saisi = () => {
     const {
       Designation,
       duree,
-      Coefficient,
       Quantite,
       Montant,
       name,
@@ -78,7 +77,6 @@ const Saisi = () => {
     await createImo({
       Designation,
       duree,
-      Coefficient,
       Quantite,
       Montant,
 
@@ -254,14 +252,6 @@ const Saisi = () => {
             <Radio value="Lineaire">Lineaire</Radio>
             <Radio value="Dégressif">Dégressif</Radio>
           </Radio.Group>
-        </Form.Item>
-
-        <Form.Item
-          name={["user", "Coefficient"]}
-          label="Coefficient :"
-          rules={[{ type: "number", min: 0, max: 99 }]}
-        >
-          <InputNumber />
         </Form.Item>
 
         <Form.Item
