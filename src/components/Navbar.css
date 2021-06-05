@@ -30,6 +30,7 @@
     width: 70vw;
     justify-content: end;
     margin-right: 2rem;
+    margin-top: 1rem;
   }
   
   .nav-item {
@@ -48,6 +49,7 @@
     background-color: #1888ff;
     border-radius: 4px;
     transition: all 0.2s ease-out;
+    color: white;
   }
   
   .fa-bars {

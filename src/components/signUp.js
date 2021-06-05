@@ -41,10 +41,10 @@ const SignUp = () => {
       onFinish={onFinish}
       validateMessages={validateMessages}
     >
-      <h1>
-        Get started with us today! Create your account by filling out the
+      <h2 style={{fontSize: "18px", marginTop: "20px", textAlign: "center", fontWeight: "600"}}>
+        Get started with us today! <br/> Create your account by filling out the
         information below.
-      </h1>
+      </h2>
       <Form.Item
         name={["user", "username"]}
         label="Username"
@@ -56,6 +56,7 @@ const SignUp = () => {
         name={["user", "email"]}
         label="Email"
         rules={[{ type: "email" }]}
+        
       >
         <Input />
       </Form.Item>

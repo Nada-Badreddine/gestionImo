@@ -17,8 +17,7 @@
     height: 90vh;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
-  }
+font-size: 1.5em;  }
   .y{
     margin-top: 480px;
     margin-bottom: 508px;
@@ -126,7 +125,7 @@
 }
 
 .x {
-  margin-top: 138px;
+  margin-top: 87px;
   
   
 }
@@ -134,11 +133,12 @@
 
 
 .btn-started {
-  padding: 8px 20px;
+  padding: 10px 60px;
+  margin-top: 40px;
   border-radius: 4px;
   outline: none;
   border: none;
-  font-size: 18px;
+  font-size: 19px;
   color: #fff;
   cursor: pointer;
   margin-left: 267px;

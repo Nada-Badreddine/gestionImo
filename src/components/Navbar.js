@@ -44,20 +44,6 @@ function Navbar() {
             </Link>
           </li>
 
-          <li
-            className="nav-item"
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-          >
-            <Link
-              to="/services"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
-              Our Services <i className="fas fa-caret-down" />
-            </Link>
-            {dropdown && <Dropdown />}
-          </li>
           <li className="nav-item">
             <Link
               to="/formm"
