@@ -18,7 +18,7 @@ import './Contact.scss';
                 <h4>
                         Contact Information
                     </h4>
-                    <p>Fill up the form and then click send</p>
+                    <p className="aa">Fill up the form and then click send</p>
 
 
                     <div className="icon-text">

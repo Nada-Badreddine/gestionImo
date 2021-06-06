@@ -2,7 +2,7 @@ import { Form, Input, InputNumber, Button } from 'antd';
 import React from 'react';
 import '../App.css';
 import './pages/ContactUs';
-
+import './formm.css'
 const layout = {
   labelCol: {
     span: 8,
@@ -38,7 +38,7 @@ const Formm = () => {
     <link rel="icon" href="favicon.ico" />
       </head>
             
-            <h1>Contact Us</h1>
+            <h1 className="titleF">Contact Us</h1>
             <p className="sub-title">Got a question? Send us a message and we'll respond as soon as possible </p>
             <div id="contact-cotainer">
             <div className="contact-info">

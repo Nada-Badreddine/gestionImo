@@ -1,6 +1,7 @@
 import { Form, Input, InputNumber, Button } from "antd";
 import React from "react";
 import { createClient } from "../services/clientsServices";
+import './pages/SignUp.css'
 
 const layout = {
   labelCol: { span: 8 },
@@ -41,18 +42,19 @@ const SignUp = () => {
       onFinish={onFinish}
       validateMessages={validateMessages}
     >
-      <h2 style={{fontSize: "18px", marginTop: "20px", textAlign: "center", fontWeight: "600"}}>
+      <h2 style={{fontSize: "18px", marginTop: "20px", textAlign: "center", fontWeight: "600",paddingBottom: "47px"}}>
         Get started with us today! <br/> Create your account by filling out the
         information below.
       </h2>
-      <Form.Item
+      <Form.Item 
+      className="inputdiminuer"
         name={["user", "username"]}
         label="Username"
         rules={[{ required: true }]}
       >
         <Input />
       </Form.Item>
-      <Form.Item
+      <Form.Item className="inputdiminuer"
         name={["user", "email"]}
         label="Email"
         rules={[{ type: "email" }]}
@@ -61,10 +63,10 @@ const SignUp = () => {
         <Input />
       </Form.Item>
 
-      <Form.Item name={["user", "website"]} label="Website">
-        <Input />
-      </Form.Item>
+     
+     
       <Form.Item
+      className="inputdiminuer"
         name={"password"}
         label="Password"
         rules={[
@@ -78,6 +80,7 @@ const SignUp = () => {
         <Input.Password />
       </Form.Item>
       <Form.Item
+      className="inputdiminuer"
         name={"confirm"}
         label="Confirm Password"
         dependencies={["password"]}
@@ -103,6 +106,7 @@ const SignUp = () => {
       </Form.Item>
 
       <Form.Item
+      className="inputdiminuer"
         name={["user", "phone"]}
         label="Phone Number"
         rules={[{ required: true, message: "Please input your phone number!" }]}
@@ -113,7 +117,7 @@ const SignUp = () => {
         <Button type="primary" htmlType="submit">
           Sign up
         </Button>
-        Already have an account? Login <a href="/signin">here</a>
+                Already have an account? Login <a href="/signin">here</a>
       </Form.Item>
     </Form>
   );

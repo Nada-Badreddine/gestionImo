@@ -37,18 +37,22 @@ font-size: 1.5em;  }
   }
   .home {
     background-image: url('./images/img-1.jpg');
+   
     background-position: center;
     margin: 56px;
-    width: 558px;
-    float:right;
-    margin-top: 177px;
-   
-     height: 300px;
+    float: right;
+    margin-top: 68px;
+    width: 624px;
+    height: 321px;
     background-size: cover;
     background-repeat: no-repeat;
     color: #fff;
     font-size: 10px;
-  }
+    padding-top: 155px;
+    padding-bottom: 292px;
+    padding-left: 105px;
+}
+  
   
   .services {
     background-image: url('./images/img-9.jpg');
@@ -60,7 +64,7 @@ font-size: 1.5em;  }
   }
   
   .products {
-    background-image: url('./images/image1.png');
+   
     background-position: center;
     background-size: fill;
     background-repeat: no-repeat;
@@ -72,10 +76,26 @@ font-size: 1.5em;  }
     margin-top: 49px;
     
   }
-  .products p {
-    color:green;
+  .aaaaaa{
+    color:black;
+    margin-top: -995px;
+    margin-bottom: 58em;
   }
-  
+  .modif{
+    vertical-align: middle;
+    border-style: none;
+    padding-right: -28px;
+    padding-left: 126px;
+    margin-bottom: 282px;
+    padding-bottom: 167px;
+    padding-right: 93px;
+    margin-top: -688px;
+    margin-bottom: 75px;
+    padding-top: -11px;
+    height: 1000px;
+    width: 1010px;
+    margin-left: 506px;
+  }
 
 
 

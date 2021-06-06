@@ -10,8 +10,8 @@ export default function Home() {
         <h1 className='home'></h1>
         <div  className='x'>
         <h className='y'>Welcome to our site </h>
-        <div className='a'>Discover our website offer, designed to meet all your
-       expectations in terms of asset management.</div>
+        <div className='a'>Benefit from our website , which is designed to meet all your
+           expectations in terms of asset management.</div>
         
         <div className='hero-btns'>
         <Link to='signin'>

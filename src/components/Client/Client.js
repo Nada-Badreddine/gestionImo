@@ -8,8 +8,10 @@ import {
   ShopOutlined,
   TeamOutlined,
   UserOutlined,
-  UploadOutlined,
+  FormOutlined,
+  CalculatorOutlined ,
   VideoCameraOutlined,
+  DatabaseOutlined,
 } from "@ant-design/icons";
 import MenuItem from "antd/lib/menu/MenuItem";
 import "./Client.css";
@@ -18,6 +20,7 @@ import Saisi from "../saisi";
 import Amortissement from "../amortissement";
 import Amortissementdeg from "../amortissementdeg";
 import Exploitation from "../exploitation";
+import SaisiExploitation from "../saisiExploi";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -33,6 +36,8 @@ const ContentCient = ({ currentPage }) => {
       return <Amortissementdeg />;
     case 5:
       return <Exploitation />;
+      case 6:
+      return <SaisiExploitation />;
   }
 };
 
@@ -53,7 +58,7 @@ const Client = () => {
         <Menu theme="dark" mode="inline" defaultSelectedKeys={["4"]}>
           <Menu.Item
             key="1"
-            icon={<UploadOutlined />}
+            icon={<FormOutlined />}
             onClick={() => setCurrentPage(1)}
           >
             Saisi d'une immobilisation
@@ -61,7 +66,7 @@ const Client = () => {
 
           <Menu.Item
             key="2"
-            icon={<BarChartOutlined />}
+            icon={<DatabaseOutlined />}
             onClick={() => setCurrentPage(2)}
           >
             Liste des immobilisations
@@ -69,7 +74,7 @@ const Client = () => {
 
           <Menu.Item
             key="3"
-            icon={<CloudOutlined />}
+            icon={<CalculatorOutlined />}
             onClick={() => setCurrentPage(3)}
           >
             Plan d'amortissement lineaire
@@ -77,15 +82,22 @@ const Client = () => {
 
           <Menu.Item
             key="4"
-            icon={<CloudOutlined />}
+            icon={<CalculatorOutlined />}
             onClick={() => setCurrentPage(4)}
           >
             Plan d'amortissement degressif
           </Menu.Item>
+          <Menu.Item
+            key="6"
+            icon={<FormOutlined /> }
+            onClick={() => setCurrentPage(6)}
+          >
+            Saisi Exploitation
+          </Menu.Item>
 
           <Menu.Item
             key="5"
-            icon={<CloudOutlined />}
+            icon={<DatabaseOutlined />}
             onClick={() => setCurrentPage(5)}
           >
             Exploitation
