@@ -243,7 +243,7 @@ const Saisi = () => {
           <DatePicker />
         </Form.Item>
 
-        <Form.Item label="Date mis en service :" name={["user", "serviceDate"]}>
+        <Form.Item label="Date mis en service :" name={["user","serviceDate"]}>
           <DatePicker />
         </Form.Item>
 

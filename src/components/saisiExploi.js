@@ -16,7 +16,6 @@ import {
     wrapperCol: { span: 16 },
   };
   
-
   const validateMessages = {
     required: "${label} is required!",
     types: {
