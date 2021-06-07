@@ -40,9 +40,12 @@ const Signin = () => {
       onFinishFailed={onFinishFailed}
       className="x"
     >
-      <h1>Sign in</h1>
-      <p>use your UserName or your Gmail account</p>
+       <h2 style={{fontSize: "18px", marginTop: "20px", textAlign: "center", fontWeight: "600",paddingBottom: "47px"}}>
+       Use your UserName or your Gmail account
+      </h2>
+      
       <Form.Item
+      className="inputdiminuer"
         label="email"
         name="email"
         rules={[{ required: true, message: "Please input your email!" }]}
@@ -51,6 +54,7 @@ const Signin = () => {
       </Form.Item>
 
       <Form.Item
+      className="inputdiminuer"
         label="password"
         name="password"
         rules={[{ required: true, message: "Please input your password!" }]}

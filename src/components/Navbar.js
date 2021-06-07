@@ -65,7 +65,7 @@ function Navbar() {
         </ul>
         {name ? (
           <div style={{ display: "flex" }}>
-            <p style={{ fontSize: "1rem", color: 'red' }} className="header-name">{name}</p>
+            <p style={{ fontSize: "1rem", color: 'red',fontSize: "20px" }} className="header-name">{name}</p>
             <Button
               type="primary"
               danger

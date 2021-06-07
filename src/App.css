@@ -76,11 +76,28 @@ font-size: 1.5em;  }
     margin-top: 49px;
     
   }
-  .aaaaaa{
-    color:black;
-    margin-top: -995px;
+  .aaaaaa {
+    color: rgb(248, 51, 1);
+    margin-top: -1003px;
     margin-bottom: 58em;
+    font-family: emoji;
+    font-size: 22px;
+    text-align: center;
+    margin-left: -51px;
   }
+  .aaa {
+    color: rgb(248, 51, 1);
+    margin-bottom: 58em;
+    font-family: emoji;
+    font-size: 22px;
+    text-align: center;
+    margin-top: -1283px;
+    margin-left: 70px;
+  }
+
+.xl{
+  padding-left:12px;
+}
   .modif{
     vertical-align: middle;
     border-style: none;
@@ -96,6 +113,7 @@ font-size: 1.5em;  }
     width: 1010px;
     margin-left: 506px;
   }
+
 
 
 
