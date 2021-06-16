@@ -83,7 +83,7 @@ const AmortissementDeg = () => {
       <Table dataSource={imo} columns={columns} setVisible={setVisible} />
 
       <Modal
-        title="Modal 1000px width"
+        title="Amortissement dégressif"
         centered
         visible={visible}
         onOk={() => setVisible(false)}

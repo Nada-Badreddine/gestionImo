@@ -83,7 +83,7 @@ const Amortissement = () => {
       <Table dataSource={imo} columns={columns} setVisible={setVisible} />
 
       <Modal
-        title="Modal 1000px width"
+        title="Amortissement lineaire"
         centered
         visible={visible}
         onOk={() => setVisible(false)}
